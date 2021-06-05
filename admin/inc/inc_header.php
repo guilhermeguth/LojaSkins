@@ -32,6 +32,15 @@ require "../../conecta.php";
         <!-- <li><a href="../categoria/ord_cad.php">Ordenar</a></li> -->
       </ul>
     </li>
+
+    <li class="submenu">
+    <a href="#"><i class="icon icon-th-list"></i><span>Produtos</span></a>
+    <ul>
+      <li class="active"><a href="../produtos/form_adicionar_produtos.php">Cadastrar</a></li>
+      <li><a href="../produtos/list_produtos.php">Listar</a></li>
+    </ul>
+  </li>
+    
     <li class="submenu">
       <a href="#"><i class="icon icon-th-list"></i><span>Conheça Minha Empresa</span></a>
       <ul>

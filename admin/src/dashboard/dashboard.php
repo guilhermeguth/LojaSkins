@@ -11,7 +11,7 @@
 		?>
 		<div id="content">
 			<div id="content-header">
-				<h1>Painel de controle da Turma </h1>
+				<h1>Painel da Loja</h1>
 			</div>
 			<div class="container-fluid">
 			</div>
