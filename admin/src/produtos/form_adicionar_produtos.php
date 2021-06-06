@@ -61,6 +61,11 @@
                                <input type="text" name="inp_propesliq" id="inp_propesliq" class="input-xlarge" placeholder="Informe..." value="" ></div>
                         </div>
                         <div class="control-group">
+                            <label class="control-label" for="inp_provalven">Preço de Venda*:</label>
+                            <div class="controls">
+                               <input type="text" name="inp_provalven" id="inp_provalven" class="input-xlarge" placeholder="Informe..." value="" ></div>
+                        </div>
+                        <div class="control-group">
                             <label class="control-label" for="inp_propesliq">Imagens Interna*:</label>
                             <div class="controls">
                                 <form method="POST" enctype="multipart/form-data">

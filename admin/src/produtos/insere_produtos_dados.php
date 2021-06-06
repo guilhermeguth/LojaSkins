@@ -12,7 +12,10 @@ if (isset($_POST['inp_login'])) {
     $largura =  validacao($_POST['inp_prolarg']);
     $altura =  validacao($_POST['inp_proalt']);
     $pesobruto =  validacao($_POST['inp_propesbru']);
-    $pesoliquido =  validacao($_POST['inp-propesliq']);
+    $pesoliquido =  validacao($_POST['inp_propesliq']);
+    $precovenda =  validacao($_POST['inp_provalven']);
+    $imageminterna =  validacao($_POST['inp_proimgint']);
+    $imagemexterna =  validacao($_POST['inp_proimgext']);
 
 
     
@@ -23,7 +26,10 @@ if (isset($_POST['inp_login'])) {
                                 prolarg = '{$largura}',
                                 proalt = '{$altura}',                            
                                 propesbru = '{$pesobruto}',
-                                propesliq = '{$pesoliquido}'";
+                                propesliq = '{$pesoliquido}',
+                                provalven = '{$precovenda}',
+                                proimgint = '{$imageminterna}',
+                                proimgext = '{$imagemexterna}'";
 
 //executa nossa query
     if (!(mysqli_query($con,$sql))) {
