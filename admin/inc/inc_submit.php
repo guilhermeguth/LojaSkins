@@ -1,6 +1,6 @@
 <div class="form-actions">	
 	<button type="submit" id="upload" name="upload" onclick="alert_msg()" class="btn btn-primary"> <i class="icon-ok-circle icon-white"></i>
-		Gravar
+		Salvar
 	</button>
 	<button type="reset" class="btn"> <i class="icon-remove-circle icon-black"></i>
 		Cancelar

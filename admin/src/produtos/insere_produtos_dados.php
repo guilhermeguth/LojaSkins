@@ -1,6 +1,6 @@
 <?php
 //verificamos se não está vindo o campos login vaziu.
-if (isset($_POST['inp_login'])) {
+if (isset($_POST['inp_procod'])) {
     //chamamos nossa conexão com o banco.
     require "../../conecta.php";
     //chamar nossas bibliotecas para validar nossa informação recebida e retornar nossa msg.
@@ -14,8 +14,8 @@ if (isset($_POST['inp_login'])) {
     $pesobruto =  validacao($_POST['inp_propesbru']);
     $pesoliquido =  validacao($_POST['inp_propesliq']);
     $precovenda =  validacao($_POST['inp_provalven']);
-    $imageminterna =  validacao($_POST['inp_proimgint']);
-    $imagemexterna =  validacao($_POST['inp_proimgext']);
+    //$imageminterna =  validacao($_POST['inp_proimgint']);
+    //$imagemexterna =  validacao($_POST['inp_proimgext']);
 
 
     
@@ -27,9 +27,7 @@ if (isset($_POST['inp_login'])) {
                                 proalt = '{$altura}',                            
                                 propesbru = '{$pesobruto}',
                                 propesliq = '{$pesoliquido}',
-                                provalven = '{$precovenda}',
-                                proimgint = '{$imageminterna}',
-                                proimgext = '{$imagemexterna}'";
+                                provalven = '{$precovenda}'";
 
 //executa nossa query
     if (!(mysqli_query($con,$sql))) {

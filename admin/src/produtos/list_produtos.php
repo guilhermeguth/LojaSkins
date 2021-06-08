@@ -15,7 +15,7 @@
 		</div>
 		<div id="breadcrumb">
 			<a href="../dashboard/dashboard.php" title="Pagina Inicial" class="tip-bottom"><i class="icon-home"></i> Início</a>
-			<a href="list_cad.php" class="current">Listar Produtos</a>
+			<a href="list_produtos.php" class="current">Listar Produtos</a>
 		</div>
 		<div class="container-fluid">
 			<div class="row-fluid">
@@ -37,8 +37,6 @@
                                             <th>Peso Bruto</th>
                                             <th>Peso Líquido</th>
 											<th>Preço de Venda</th>
-											<th>Imagem Interna</th>
-											<th>Imagem Externa</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -55,8 +53,6 @@
                                         $nome_coluna_id = 'propesbru';
                                         $nome_coluna_id = 'propesliq';
 										$nome_coluna_id = 'provalven';
-										$nome_coluna_id = 'proimgint';
-										$nome_coluna_id = 'proimgext';
 
 										while ($listagem = mysqli_fetch_array($sql)) {
 											$procod = $listagem['procod'];
@@ -67,20 +63,16 @@
                                             $pesobruto = $listagem['propesbru'];
                                             $pesoliquido = $listagem['propesliq'];
 											$precovenda = $listagem['provalven'];
-											$imageminterna = $listagem['proimgint'];
-											$imagemexterna = $listagem['proimgext'];
 											?>
 											<tr class="grade_">
 												<td><?php echo $procod ?></td>
                                                 <td><?php echo $descricao ?></td>
-                                                <td><?php echo $comprimento ?></td>
-                                                <td><?php echo $largura ?></td>
-                                                <td><?php echo $altura ?></td>
-                                                <td><?php echo $pesobruto ?></td>
-                                                <td><?php echo $pesoliquido ?></td>
-												<td><?php echo $precovenda ?></td>
-												<td><?php echo $imageminterna ?></td>
-												<td><?php echo $imagemexterna ?></td>
+                                                <td><?php echo $comprimento ?> mts</td>
+                                                <td><?php echo $largura ?> mts</td>
+                                                <td><?php echo $altura ?> mts</td>
+                                                <td><?php echo $pesobruto ?> kg</td>
+                                                <td><?php echo $pesoliquido ?> kg</td>
+												<td>R$ <?php echo $precovenda ?></td>
 												<td>
 													<a class="btn btn-small btn-primary" href="edt_produtos.php?procod=<?php echo $procod ?>"/><i class='icon-edit icon-white'></i> Editar</a>
 													<a class="btn btn-small btn-danger" href="exc_produtos.php?procod=<?php echo $procod ?>"; onclick='return confirm("Deseja excluir o Produto selecionado?");'><i class='icon-remove-circle icon-white'></i> Excluir</a>

@@ -15,7 +15,7 @@
         </div>
         <div id="breadcrumb">
             <a href="dashboard.php" title="Pagina Inicial" class="tip-bottom"><i class="icon-home"></i> Início</a>
-            <a href="form_adicionar_usuarios.php" class="current">Produtos</a>
+            <a href="form_adicionar_produtos.php" class="current">Produtos</a>
         </div>
         <div class="container-fluid">
             <?php
@@ -24,7 +24,7 @@
             <div class="row-fluid">
                 <div class="span12">
 
-                    <form id="frm_cad" name="frm_cad" method="post" class="form-horizontal" action="insere_usuario_dados.php">
+                    <form id="frm_cad" name="frm_cad" method="post" class="form-horizontal" action="insere_produtos_dados.php">
                         <div class="control-group">
                             <label class="control-label" for="inp_procod">Código*</label>
                             <div class="controls">
@@ -65,20 +65,7 @@
                             <div class="controls">
                                <input type="text" name="inp_provalven" id="inp_provalven" class="input-xlarge" placeholder="Informe..." value="" ></div>
                         </div>
-                        <div class="control-group">
-                            <label class="control-label" for="inp_propesliq">Imagens Interna*:</label>
-                            <div class="controls">
-                                <form method="POST" enctype="multipart/form-data">
-                                    <input type="file" name="inp_proimgint" accept="image/*" class="form-control">
-                                </form>
-                            </div>
-                            <label class="control-label" for="inp_propesliq">Imagens Externa*:</label>
-                            <div class="controls">    
-                                <form method="POST" enctype="multipart/form-data">
-                                    <input type="file" name="inp_proimgext" accept="image/*" class="form-control">
-                                </form>
-                            </div>
-                        </div>                             
+                                       
                             <div class="control-group">
                                 <div class="controls">
                                     <div class="alert alert-danger">
