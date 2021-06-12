@@ -19,9 +19,15 @@
 
             $id = (isset($_GET['id']) ? $_GET['id'] : 0);
 
-            $sql = mysqli_query($con,"select * from login where id = $id") or die(mysqli_error($con));
+            $sql = mysqli_query($con,"select * from produtos where procod = $id") or die(mysqli_error($con));
             $listagem = mysqli_fetch_array($sql);
-            $login = $listagem['login'];
+            $descricao = $listagem['procod'];
+            $comprimento = $listagem['procomp'];
+            $largura = $listagem['prolarg'];
+            $altura = $listagem['proalt'];
+            $pesobruto = $listagem['propesbru'];
+            $pesoliquido = $listagem['propesliq'];
+            $precovenda = $listagem['provalven'];
             
             ?>
             <a href="../dashboard/dashboard.php" title="Pagina Inicial" class="tip-bottom"><i class="icon-home"></i> Início</a>
@@ -37,7 +43,7 @@
                         <div class="control-group">
                             <label class="control-label" for="inp_login">Login*</label>
                             <div class="controls">
-                               <input type="text" name="inp_login" id="inp_login" class="input-xlarge" placeholder="Informe..."   <?php  echo" value='$login'"?> ></div>
+                               <input type="text" name="inp_login" id="inp_login" class="input-xlarge" placeholder="Informe..."   <?php  echo" value='$descricao'"?> ></div>
                            </div>
                            <div class="control-group">
                             <label class="control-label" for="inp_senha">Senha Antiga*:</label>

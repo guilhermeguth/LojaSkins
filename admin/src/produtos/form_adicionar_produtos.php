@@ -65,6 +65,16 @@
                             <div class="controls">
                                <input type="text" name="inp_provalven" id="inp_provalven" class="input-xlarge" placeholder="Informe..." value="" ></div>
                         </div>
+                        <div class="control-group">
+                            <label class="control-label" for="inp_proimgint">Imagem Interna*:</label>
+                            <div class="controls">
+                               <input type="file" name="inp_proimgint" id="inp_proimgint" class="input-xlarge" placeholder="Informe..." value="" ></div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="inp_proimgext">Imagem Externa*:</label>
+                            <div class="controls">
+                               <input type="file" name="inp_proimgext" id="inp_proimgext" class="input-xlarge" placeholder="Informe..." value="" ></div>
+                        </div>
                                        
                             <div class="control-group">
                                 <div class="controls">

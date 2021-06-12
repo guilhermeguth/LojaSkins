@@ -1,36 +1,36 @@
 <?php
-if (isset($_POST['inp_login'])) {
 	require "../../conecta.php";
 	require "../../lib/funcoes.php";
 
-//validar se foi preenchido todos os campos
-	$login =  validacao($_POST['inp_login']);
-	$senhaAntiga =  validacao($_POST['inp_senhaAntiga']);
-	$senhaNova =  validacao($_POST['inp_senhaNova']);
+	$produto['pronom'] = $_POST['inp_pronom'];
+	$produto['procomp'] = $_POST['inp_procomp'];
+	$produto['prolarg'] = $_POST['inp_prolarg'];
+	$produto['proalt'] = $_POST['inp_proalt'];
+	$produto['propesbru'] = $_POST['inp_propesbru'];
+	$produto['propesliq'] = $_POST['inp_propesliq'];
+	$produto['provalven'] = $_POST['inp_provalven'];
+	//$imageminterna =  ($_FILES['inp_proimgint']);
+	// $imagemexterna =  ($_FILES['inp_proimgext']);
 
 	$id = $_POST['id'];
-
-	//verificar se a senha antiga confere.
-	$sql = mysqli_query($con,"select * from login where id= $id and senha= '$senhaAntiga'") or die(mysqli_error($con));
-	$row = mysqli_num_rows($sql);
-
-    //verificar se retornou algo.
-	if ($row ==0) {
-    // se não retornou retorna mensagem informando que a senha está incorreta.
-		get_error_msg("Senha incorreta, tente novamente");
-
-	}else{
-	//caso esteja correta faz update na senha.
-		$sql = "update login set senha = '{$senhaNova}'
-		where  id = '{$id}'";
+	foreach ($produto as $col => $valor){
+		if($valor === ''){
+			get_error_msg("Preencha todos os campos obrigatórios!!!");
+		}
+	}
+		$sql = "update produtos set pronom = '{$produto['pronom']}',
+									procomp = '{$produto['procomp']}',
+									prolarg = '{$produto['prolarg']}',
+									proalt = '{$produto['proalt']}',
+									propesbru = '{$produto['propesbru']}',
+									propesliq = '{$produto['propesliq']}',
+									provalven = '{$produto['provalven']}'
+		where procod = '{$id}'";
 
 		if (!(mysqli_query($con,$sql))){
 			die(mysqli_error($con));
 			exit;
 		}
 
-		get_success_msg("Senha Atualizada");
-	}
-	
-}
+		get_success_msg("Produto Alterado com Sucesso!");
 ?>

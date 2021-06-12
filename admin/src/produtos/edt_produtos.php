@@ -17,37 +17,62 @@
             <?php
             require "../../conecta.php";
 
-            $id = (isset($_GET['id']) ? $_GET['id'] : 0);
+            $id = (isset($_GET['procod']) ? $_GET['procod'] : 0);
 
-            $sql = mysqli_query($con,"select * from login where id = $id") or die(mysqli_error($con));
+            $sql = mysqli_query($con,"select * from produtos where procod = $id") or die(mysqli_error($con));
             $listagem = mysqli_fetch_array($sql);
-            $login = $listagem['login'];
-            
+            $descricao = $listagem['pronom'];
+            $comprimento = $listagem['procomp'];
+            $largura = $listagem['prolarg'];
+            $altura = $listagem['proalt'];
+            $pesobruto = $listagem['propesbru'];
+            $pesoliquido = $listagem['propesliq'];
+            $precovenda = $listagem['provalven'];
             ?>
             <a href="../dashboard/dashboard.php" title="Pagina Inicial" class="tip-bottom"><i class="icon-home"></i> Início</a>
-            <a href="edt_dado_slide.php?id=<?php echo $id ?>" class="current">Alteração Senha</a>
+            <a href="edt_dado_slide.php?id=<?php echo $id ?>" class="current">Alteração Produtos</a>
         </div>
         <div class="container-fluid">
             <?php include ("../../inc/inc_loading.php"); ?>
             <div class="row-fluid">
                 <div class="span12">
-                    <form id="frm_edt" name="frm_edt" method="post" class="form-horizontal" action="update_usuario.php" enctype="multipart/form-data">
+                    <form id="frm_edt" name="frm_edt" method="post" class="form-horizontal" action="update_produtos.php" enctype="multipart/form-data">
                         <input style="display: none" hidden value=<?php echo" '$id' "?> name="id"/>
 
                         <div class="control-group">
-                            <label class="control-label" for="inp_login">Login*</label>
+                            <label class="control-label" for="inp_pronom">Descrição*:</label>
                             <div class="controls">
-                               <input type="text" name="inp_login" id="inp_login" class="input-xlarge" placeholder="Informe..."   <?php  echo" value='$login'"?> ></div>
+                               <input type="text" name="inp_pronom" id="inp_pronom" class="input-xlarge" placeholder="Informe..."   <?php  echo" value='$descricao'"?>></div>
                            </div>
                            <div class="control-group">
-                            <label class="control-label" for="inp_senha">Senha Antiga*:</label>
+                            <label class="control-label" for="inp_procomp">Comprimento*:</label>
                             <div class="controls">
-                             <input type="password" name="inp_senhaAntiga" class="input-xlarge" placeholder="Informe..." ></div>
+                             <input type="text" name="inp_procomp" class="input-xlarge" placeholder="Informe..." <?php  echo" value='$comprimento'"?>></div>
                          </div>    
                          <div class="control-group">
-                            <label class="control-label" for="inp_senha">Nova Senha*:</label>
+                            <label class="control-label" for="inp_prolarg">Largura*:</label>
                             <div class="controls">
-                                <input type="password" name="inp_senhaNova" class="input-xlarge" placeholder="Informe..." ></div>
+                                <input type="text" name="inp_prolarg" class="input-xlarge" placeholder="Informe..." <?php  echo" value='$largura'"?>></div>
+                         </div>
+                         <div class="control-group">
+                            <label class="control-label" for="inp_proalt">Altura*:</label>
+                            <div class="controls">
+                                <input type="text" name="inp_proalt" class="input-xlarge" placeholder="Informe..." <?php  echo" value='$altura'"?>></div>
+                         </div>
+                         <div class="control-group">
+                            <label class="control-label" for="inp_propesbru">Peso Bruto*:</label>
+                            <div class="controls">
+                                <input type="text" name="inp_propesbru" class="input-xlarge" placeholder="Informe..." <?php  echo" value='$pesobruto'"?>></div>
+                         </div>            
+                         <div class="control-group">
+                            <label class="control-label" for="inp_propesliq">Peso Líquido*:</label>
+                            <div class="controls">
+                                <input type="text" name="inp_propesliq" class="input-xlarge" placeholder="Informe..." <?php  echo" value='$pesoliquido'"?>></div>
+                         </div>    
+                         <div class="control-group">
+                            <label class="control-label" for="inp_provalven">Preço de Venda*:</label>
+                            <div class="controls">
+                                <input type="text" name="inp_provalven" class="input-xlarge" placeholder="Informe..." <?php  echo" value='$precovenda'"?>></div>
                          </div>    
 
                          <div class="control-group">
@@ -83,7 +108,7 @@
         $('#frm_edt').ajaxForm({
             success : function(resposta){
                 $('#alert_modal p').append(resposta);
-                if (resposta == "<div class='alert alert-success'>Senha Atualizada</div>") {
+                if (resposta == "<div class='alert alert-success'>Produto Alterado</div>") {
                     $('#alert_footer').append("<div onclick='location.reload();' class='btn btn-primary'>Fechar</div>");
                 }else{
                     $('#alert_footer').append("<div class='btn btn-primary'>Fechar</div>");
