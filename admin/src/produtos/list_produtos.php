@@ -79,8 +79,8 @@
                                                 <td><?php echo $pesobruto ?> kg</td>
                                                 <td><?php echo $pesoliquido ?> kg</td>
 												<td>R$ <?php echo $precovenda ?></td>
-												<td><?php echo  "<img class='d-block w-100 h-100' src='img/$imageminterna'>" ?> </td>
-												<td><?php echo "<img class='d-block w-100 h-100' src='img/$imagemexterna'>" ?> </td>
+												<td style="font-size: 32px;text-align: center; vertical-align: middle;"><?php echo  "<img src='img/$imageminterna'  alt='Imagem Iterna' height='200px' width='200px'>" ?> </td>
+												<td style="font-size: 32px;text-align: center; vertical-align: middle;"><?php echo "<img src='img/$imagemexterna'  alt='Imagem Externa' height='200px' width='200px'>" ?> </td>
 												<td>
 													<a class="btn btn-small btn-primary" href="edt_produtos.php?procod=<?php echo $procod ?>"/><i class='icon-edit icon-white'></i> Editar</a>
 													<a class="btn btn-small btn-danger" href="exc_produtos.php?procod=<?php echo $procod ?>"; onclick='return confirm("Deseja excluir o Produto selecionado?");'><i class='icon-remove-circle icon-white'></i> Excluir</a>
